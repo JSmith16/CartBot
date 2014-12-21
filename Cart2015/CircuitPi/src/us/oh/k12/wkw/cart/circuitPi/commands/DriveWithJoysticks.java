@@ -23,6 +23,9 @@ public class DriveWithJoysticks extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        DriveSystem.drive();
+        DriveSystem.turn();
+        
         
     }
 

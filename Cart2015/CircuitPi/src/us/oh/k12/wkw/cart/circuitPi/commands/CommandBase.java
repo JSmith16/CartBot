@@ -2,6 +2,8 @@ package us.oh.k12.wkw.cart.circuitPi.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
+
+
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import us.oh.k12.wkw.cart.circuitPi.OI;
 import us.oh.k12.wkw.cart.circuitPi.subsystems.HeightArm;
@@ -27,6 +29,7 @@ public abstract class CommandBase extends Command {
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
         oi = new OI();
+        
 
         // Show what command your subsystem is running on the SmartDashboard
         //SmartDashboard.putData(exampleSubsystem);

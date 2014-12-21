@@ -24,7 +24,11 @@ public class DriveSystem extends Subsystem {
     SpeedController rightMotor = new Jaguar(RobotMap.rightMotor);
      
    public static final double pi = 0.7;  //This number is the motor speed. Only change it UP HERE
-    /*public void robotWeight(){
+   public double speed = 0.0;
+   public double turn = 0.0;
+   
+   
+   /*public void robotWeight(){
         if(RobotMap.weightSensor()>=5)
         {
             pi += .2;
@@ -42,41 +46,33 @@ public class DriveSystem extends Subsystem {
    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        if(false) {
-            setDefaultCommand(new DriveWithJoysticks());
-        }
-        else{
-            setDefaultCommand(new DriveDoNothing());
-        }
+            
+
+        setDefaultCommand(new DriveWithJoysticks());
+
+
+
+    }
+    
+    
+    
+   
+    
+
+    public void drive() {
+ 
+        leftMotor.set(speed);
+        rightMotor.set(speed);
         
     }
     
-    
-    
-    public void driveForward() {
-        leftMotor.set(pi);
-        rightMotor.set(pi);
+    public void turn() {
+        leftMotor.set(turn);
+        rightMotor.set(turn);
     }
     
-    public void driveBackwards() {
-        leftMotor.set(-pi);
-        rightMotor.set(-pi);
-    }
-        
-    public void driveTurnLeft() {
-        leftMotor.set(-pi);
-        rightMotor.set(pi);
-    }
     
-    public void driveTurnRight() {
-        leftMotor.set(pi);
-        rightMotor.set(-pi);
-    }
-    
-    public void driveWithJoysticks() {
-        
-    }
-    
+    //BOTH:
     public void doNothing() {
         leftMotor.set(0.0);
         rightMotor.set(0.0);
