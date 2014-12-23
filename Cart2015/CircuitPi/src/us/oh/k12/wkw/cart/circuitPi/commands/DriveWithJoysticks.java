@@ -19,14 +19,14 @@ public class DriveWithJoysticks extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        DriveSystem.doNothing();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        DriveSystem.drive();
-        DriveSystem.turn();
-        
-        
+        DriveSystem.driveWithJoysticks();
+
+
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -41,5 +41,6 @@ public class DriveWithJoysticks extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+        DriveSystem.doNothing();
     }
 }
