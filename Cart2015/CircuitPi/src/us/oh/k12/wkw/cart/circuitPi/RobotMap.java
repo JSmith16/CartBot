@@ -16,10 +16,10 @@ public class RobotMap {
     public static final int armHeightMotor = 3;
     
     //Sensors
-    //public static final int heightFinder = 4;
-    //public static final int weightSensor = 5;
+    public static final int heightFinder = 4;
+    public static final int weightSensor = 5;
     
-
+ 
     // If you are using multiple modules, make to define both the port
     // number and the module. For example you with a rangefinder:
     // public static final int rangefinderPort = 1;

@@ -33,7 +33,7 @@ public class circuitPi extends IterativeRobot {
         //autonomousCommand = new StartUp();
         // Initialize all subsystems
         CommandBase.init();
-
+       
     }
 
     public void autonomousInit() {

@@ -8,7 +8,9 @@ package us.oh.k12.wkw.cart.circuitPi.subsystems;
 import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import us.oh.k12.wkw.cart.circuitPi.OI;
 import us.oh.k12.wkw.cart.circuitPi.RobotMap;
+import us.oh.k12.wkw.cart.circuitPi.commands.DriveDoNothing;
 import us.oh.k12.wkw.cart.circuitPi.commands.DriveWithJoysticks;
 
 /**
@@ -20,37 +22,61 @@ public class DriveSystem extends Subsystem {
     // here. Call these from Commands.
     SpeedController leftMotor = new Jaguar(RobotMap.leftMotor);
     SpeedController rightMotor = new Jaguar(RobotMap.rightMotor);
-    
-    public static double leftSpeed;
-    public static double rightSpeed;
-    
-    //Joystick Drive = new OI.Drive;
- 
+     
+   public static final double pi = 0.7;  //This number is the motor speed. Only change it UP HERE
+   public double speed = 0.0;
+   public double turn = 0.0;
+   
+   
+   /*public void robotWeight(){
+        if(RobotMap.weightSensor()>=5)
+        {
+            pi += .2;
+        }
+        else
+        {
+            pi += .1*(RobotMap.weightSensor());
+        }
+    }
+    */
+    //Joystick or Button?
 
- 
-    public void initDefaultCommand(){
+   
+   
+   
+    public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        
+            
+
         setDefaultCommand(new DriveWithJoysticks());
 
-    }
 
 
-    public void driveWithJoysticks() {
-        leftMotor.set(leftSpeed);
-        rightMotor.set(rightSpeed);
     }
     
-    /*public void turn() {
+    
+    
+   
+    
+
+    public void drive() {
+ 
+        leftMotor.set(speed);
+        rightMotor.set(speed);
+        
+    }
+    
+    public void turn() {
         leftMotor.set(turn);
         rightMotor.set(turn);
     }
-    */
     
+    
+    //BOTH:
     public void doNothing() {
         leftMotor.set(0.0);
         rightMotor.set(0.0);
     }
-
+         
    
 }
