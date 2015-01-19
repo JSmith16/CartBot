@@ -16,7 +16,7 @@ import us.oh.k12.wkw.cart.circuitPi.subsystems.DriveSystem;
  */
 public class OI {
 //OPERATOR INTERFACE
-    public Joystick Drive = new Joystick(1);
+    private Joystick joystick;
     //Declare every input to the device
     
     
@@ -29,35 +29,36 @@ public class OI {
     
     public OI() {
         
-        new JoystickButton(this.Drive, 1)
+        super();
+        
+        this.joystick = new Joystick(1);
+        
+       /** new JoystickButton(this.joystick, 1)
                 .whileHeld(new ArmGoUp());
         
-        new JoystickButton(this.Drive, 2)
+        new JoystickButton(this.joystick, 2)
                 .whileHeld(new ArmGoDown());
 
-        new JoystickButton(this.Drive, 3)
+        new JoystickButton(this.joystick, 3)
                 .whileHeld(new ArmDoNothing());
         
-        new JoystickButton(this.Drive, 4)
+        new JoystickButton(this.joystick, 4)
                 .whenPressed(new DriveDoNothing());
         
-        new JoystickButton(this.Drive, 5)
+        new JoystickButton(this.joystick, 5)
                 .whenPressed(new DriveWithJoysticks());
-        
-        double speed;
-        speed = Drive.getY();
-        
-        double turn;
-        turn = Drive.getTwist();
-        
-        DriveSystem.leftSpeed = speed + turn;
-        DriveSystem.rightSpeed = speed - turn;
-        
+       */
+       
         
  
         
     }
     
+    public Joystick getJoystick() {
+        return this.joystick;
+    }
+   
+
 
 
     /*

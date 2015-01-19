@@ -10,7 +10,7 @@ package us.oh.k12.wkw.cart.circuitPi;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import us.oh.k12.wkw.cart.circuitPi.commands.CommandBase;
+import us.oh.k12.wkw.cart.circuitPi.commands.RobotInitCmd;
 
 
 /**
@@ -23,6 +23,7 @@ import us.oh.k12.wkw.cart.circuitPi.commands.CommandBase;
 public class circuitPi extends IterativeRobot {
 
     //Command autonomousCommand;
+    private RobotInitCmd robotInitCmd;
      
     /**
      * This function is run when the robot is first started up and should be
@@ -32,7 +33,9 @@ public class circuitPi extends IterativeRobot {
         // instantiate the command used for the autonomous period
         //autonomousCommand = new StartUp();
         // Initialize all subsystems
-        CommandBase.init();
+        this.robotInitCmd = new RobotInitCmd();
+        this.robotInitCmd.robotInit();
+        
 
     }
 
@@ -45,7 +48,7 @@ public class circuitPi extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-        //cheduler.getInstance().run();
+        Scheduler.getInstance().run();
     }
 
     public void teleopInit() {

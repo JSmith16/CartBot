@@ -14,7 +14,7 @@ public class ArmGoDown extends CommandBase {
     public ArmGoDown() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(HeightArm);
+        requires(heightArm);
     }
 
     // Called just before this Command runs the first time
@@ -23,7 +23,7 @@ public class ArmGoDown extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        HeightArm.goDown();
+        heightArm.goDown();
     }
 
     // Make this return true when this Command no longer needs to run execute()

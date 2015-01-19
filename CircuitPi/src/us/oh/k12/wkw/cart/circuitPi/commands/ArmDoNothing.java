@@ -5,6 +5,8 @@
  */
 package us.oh.k12.wkw.cart.circuitPi.commands;
 
+import us.oh.k12.wkw.cart.circuitPi.subsystems.HeightArm;
+
 /**
  *
  * @author Joy
@@ -14,7 +16,7 @@ public class ArmDoNothing extends CommandBase {
     public ArmDoNothing() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(HeightArm);
+        requires(heightArm);
     }
 
     // Called just before this Command runs the first time
@@ -23,7 +25,7 @@ public class ArmDoNothing extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        HeightArm.armDoNothing();
+        heightArm.armDoNothing();
     
     }
 
