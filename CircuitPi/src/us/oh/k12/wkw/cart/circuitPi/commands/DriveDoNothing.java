@@ -6,12 +6,6 @@
 package us.oh.k12.wkw.cart.circuitPi.commands;
 
 
-
-
-/**
- *
- * @author Joy
- */
 public class DriveDoNothing extends CommandBase {
     
     public DriveDoNothing() {

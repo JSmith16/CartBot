@@ -12,18 +12,20 @@ package us.oh.k12.wkw.cart.circuitPi.commands;
  */
 public class RobotInitCmd extends CommandBase {
     
-    public void robotInit() {
-        super.initRobot();
+    public RobotInitCmd() {
+        super("RobotInitCmd");
     }
-
+    
+    public void initRobot() {
+       super.initRobot();
+    }
+    
     protected void initialize() {
-       
-
-       
+              
     }
 
     protected void execute() {
-        //throw new java.lang.UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //nothing
     }
 
     protected boolean isFinished() {
@@ -31,11 +33,11 @@ public class RobotInitCmd extends CommandBase {
     }
 
     protected void end() {
-        //throw new java.lang.UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     protected void interrupted() {
-        //throw new java.lang.UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

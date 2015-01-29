@@ -24,7 +24,8 @@ public class circuitPi extends IterativeRobot {
 
     //Command autonomousCommand;
     private RobotInitCmd robotInitCmd;
-     
+    
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -34,7 +35,7 @@ public class circuitPi extends IterativeRobot {
         //autonomousCommand = new StartUp();
         // Initialize all subsystems
         this.robotInitCmd = new RobotInitCmd();
-        this.robotInitCmd.robotInit();
+        this.robotInitCmd.initRobot();
         
 
     }

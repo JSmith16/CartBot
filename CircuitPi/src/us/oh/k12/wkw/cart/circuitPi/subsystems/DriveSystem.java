@@ -13,10 +13,6 @@ import us.oh.k12.wkw.cart.circuitPi.OI;
 import us.oh.k12.wkw.cart.circuitPi.RobotMap;
 import us.oh.k12.wkw.cart.circuitPi.commands.DriveWithJoysticks;
 
-/**
- *
- * @author Joy
- */
 public class DriveSystem extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.

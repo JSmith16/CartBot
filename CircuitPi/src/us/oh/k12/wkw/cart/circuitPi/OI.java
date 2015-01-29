@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import us.oh.k12.wkw.cart.circuitPi.commands.ArmDoNothing;
 import us.oh.k12.wkw.cart.circuitPi.commands.ArmGoDown;
 import us.oh.k12.wkw.cart.circuitPi.commands.ArmGoUp;
+import us.oh.k12.wkw.cart.circuitPi.commands.CommandBase;
 import us.oh.k12.wkw.cart.circuitPi.commands.DriveDoNothing;
 import us.oh.k12.wkw.cart.circuitPi.commands.DriveWithJoysticks;
 import us.oh.k12.wkw.cart.circuitPi.subsystems.DriveSystem;
@@ -16,9 +17,9 @@ import us.oh.k12.wkw.cart.circuitPi.subsystems.DriveSystem;
  */
 public class OI {
 //OPERATOR INTERFACE
-    private Joystick joystick;
-    //Declare every input to the device
     
+    //Declare every input to the device
+    private Joystick joystick;
     
 
     //Joystick
@@ -33,30 +34,35 @@ public class OI {
         
         this.joystick = new Joystick(1);
         
-       /** new JoystickButton(this.joystick, 1)
+        
+        // logitech attack 3 joystick
+        // buttons
+        // 6        1       11
+        // 7      4 3 5     10
+        //          2
+        //         8 9 
+        //
+        
+        new JoystickButton(this.joystick, 6)
                 .whileHeld(new ArmGoUp());
         
-        new JoystickButton(this.joystick, 2)
+        new JoystickButton(this.joystick, 7)
                 .whileHeld(new ArmGoDown());
-
-        new JoystickButton(this.joystick, 3)
-                .whileHeld(new ArmDoNothing());
         
-        new JoystickButton(this.joystick, 4)
+        new JoystickButton(this.joystick, 11)
+                .whenPressed(new ArmDoNothing());
+        
+        new JoystickButton(this.joystick,10)
                 .whenPressed(new DriveDoNothing());
-        
-        new JoystickButton(this.joystick, 5)
-                .whenPressed(new DriveWithJoysticks());
-       */
        
-        
- 
         
     }
     
     public Joystick getJoystick() {
         return this.joystick;
     }
+    
+
    
 
 

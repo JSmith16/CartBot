@@ -1,10 +1,6 @@
 package us.oh.k12.wkw.cart.circuitPi.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.command.Subsystem;
-
-
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import us.oh.k12.wkw.cart.circuitPi.OI;
 import us.oh.k12.wkw.cart.circuitPi.subsystems.HeightArm;
 import us.oh.k12.wkw.cart.circuitPi.subsystems.DriveSystem;
@@ -17,32 +13,25 @@ import us.oh.k12.wkw.cart.circuitPi.subsystems.DriveSystem;
  */
 public abstract class CommandBase extends Command {
 
-    public static OI oi;
-    // Create a single static instance of all of your subsystems
+    public static OI oi = null;
+
     public static HeightArm heightArm = null;
     public static DriveSystem driveSystem = null;
+    
 
-    public static void init() {
+    protected void initRobot() {
         // This MUST be here. If the OI creates Commands (which it very likely
         // will), constructing it during the construction of CommandBase (from
         // which commands extend), subsystems are not guaranteed to be
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
-        oi = new OI();
-        
-
-        // Show what command your subsystem is running on the SmartDashboard
-        //SmartDashboard.putData(exampleSubsystem);
-    }
-     protected void initRobot() {
-         
-         oi = new OI();
+         CommandBase.oi = new OI();
          
          CommandBase.driveSystem = new DriveSystem();
-         
          CommandBase.heightArm = new HeightArm();
          
-     }
+
+    }
 
     public CommandBase(String name) {
         super(name);
@@ -52,7 +41,17 @@ public abstract class CommandBase extends Command {
         super();
     }
     
-    public OI getOI() {
-        return oi;
+    protected OI getOI() {
+        return CommandBase.oi;
     }
+    
+    public DriveSystem getDriveSystem() {
+        return CommandBase.driveSystem;
+    }
+    
+    public HeightArm getArmSystem() {
+        return CommandBase.heightArm;
+    }
+
+    
 }
