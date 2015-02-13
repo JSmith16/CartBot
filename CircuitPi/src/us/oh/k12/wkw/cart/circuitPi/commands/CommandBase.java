@@ -2,8 +2,8 @@ package us.oh.k12.wkw.cart.circuitPi.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import us.oh.k12.wkw.cart.circuitPi.OI;
-import us.oh.k12.wkw.cart.circuitPi.subsystems.HeightArm;
 import us.oh.k12.wkw.cart.circuitPi.subsystems.DriveSystem;
+import us.oh.k12.wkw.cart.circuitPi.subsystems.HeightArm;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
